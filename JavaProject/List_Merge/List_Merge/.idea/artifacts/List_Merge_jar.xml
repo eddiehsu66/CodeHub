@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="List_Merge:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/List_Merge_jar</output-path>
+    <root id="archive" name="List_Merge.jar">
+      <element id="module-output" name="List_Merge" />
+    </root>
+  </artifact>
+</component>
