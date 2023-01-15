@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Ticbattle:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Ticbattle_jar</output-path>
+    <root id="archive" name="Ticbattle.jar">
+      <element id="module-output" name="Ticbattle" />
+      <element id="dir-copy" path="$PROJECT_DIR$/out/artifacts/Ticbattle_jar/image" />
+    </root>
+  </artifact>
+</component>

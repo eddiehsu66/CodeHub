@@ -1,0 +1,59 @@
+$date 2022-10-26 20:04:40 $end
+$version fpgaol V1 $end
+$timescale 1 us $end
+$scope module top $end
+$var wire 1 W SW0 $end
+$var wire 1 b SW1 $end
+$var wire 1 R SW2 $end
+$var wire 1 E SW3 $end
+$var wire 1 X SW4 $end
+$var wire 1 S SW5 $end
+$var wire 1 P SW6 $end
+$var wire 1 O SW7 $end
+$var wire 1 a LED0 $end
+$var wire 1 T LED1 $end
+$var wire 1 N LED2 $end
+$var wire 1 G LED3 $end
+$var wire 1 V LED4 $end
+$var wire 1 U LED5 $end
+$var wire 1 Q LED6 $end
+$var wire 1 M LED7 $end
+$var wire 1 Y D0 $end
+$var wire 1 F D1 $end
+$var wire 1 Z D2 $end
+$var wire 1 K D3 $end
+$var wire 1 I AN0 $end
+$var wire 1 J AN1 $end
+$var wire 1 H AN2 $end
+$var wire 1 L BTN0 $end
+$upscope $end
+$enddefinitions $end
+#0
+0E
+1F
+1G
+1H
+1I
+0J
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0a
+0b
+#30772098
+1E
+#32094936
+0E
