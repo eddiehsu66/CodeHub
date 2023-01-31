@@ -4,3 +4,6 @@ git commit -m "xxxx";将缓冲区全部提交到仓库的历史记录，xxxx为�
 git status;查看当前分支的状态<br>
 touch README.md; 创建该文档<br>
 git push -u origin main;将本地仓库的内容推送给远程仓库；<br>
+git fetch origin master：取得远端分支 master 的资料<br>
+git merge origin/master：合并本地分支 origin/master 的程式碼<br>
+git push origin master：將本地提交紀錄推至遠端分支 master<br>
