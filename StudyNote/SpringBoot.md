@@ -41,4 +41,17 @@ spring-boot-starter-actuator 是 Spring Boot 提供的一个用于监控应用�
 >    < groupId>org.springframework.boot< /groupId>  
 >    < artifactId>spring-boot-starter-actuator< /artifactId>  
 >< /dependency>    
-### 第四节 demo-admin模块
+缺点:没有可视化界面  
+
+### 第四节 demo-Admin-client/server模块
+Spring Boot Admin 可以监控 Spring Boot 单机或集群项目，它提供详细的健康 (Health)信息、内存信息、JVM 系统和环境属性、垃圾回收信息、日志设置和查看、定时任务查看、Spring Boot 缓存查看和管理等功能，感觉可以看作是对actuator的补充
+client：在application.yml中，spring.boot.admin.client.url配置server的url，在pom.xml配置文档，需要配置:
+>< dependency>
+>     < groupId>de.codecentric< /groupId>
+>     < artifactId>spring-boot-admin-starter-client< /artifactId>
+>< /dependency>
+server：在pom.xml配置
+>< dependency>
+>    < groupId>de.codecentric< /groupId>
+>    < artifactId>spring-boot-admin-starter-server< /artifactId>
+>< /dependency>  
