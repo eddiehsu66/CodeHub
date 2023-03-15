@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#os.path.dirname(__file__)返回当前文件所在的目录，os.path.abspath(__file__)返回当前文件的绝对路径，os.path.dirname()返回文件所在的目录。
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -44,6 +44,10 @@ INSTALLED_APPS = [
     "apps.finance",
     "apps.result",
 ]
+# INSTALLED_APPS 是一个列表，用于存放 Django 项目中安装的应用程序。
+# INSTALLED_APPS 中的每个应用程序都必须是一个 Python 包，这个包中必须包含一个 apps.py 文件，这个文件中必须包含一个 AppConfig 类。
+# INSTALLED_APPS 中的每个应用程序都必须在 INSTALLED_APPS 列表中注册，否则 Django 无法找到这个应用程序。
+# INSTALLED_APPS 中的每个应用程序都必须在 settings.py 中注册，否则 Django 无法找到这个应用程序。
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -55,9 +59,12 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "apps.corecode.middleware.SiteWideConfigs",
 ]
+# MIDDLEWARE 是一个列表，用于存放 Django 项目中安装的中间件。
+# MIDDLEWARE 中的每个中间件都必须是一个 Python 包，这个包中必须包含一个 middleware.py 文件，这个文件中必须包含一个 Middleware 类。
+# MIDDLEWARE 中的每个中间件都必须在 MIDDLEWARE 列表中注册，否则 Django 无法找到这个中间件。
 
 ROOT_URLCONF = "school_app.urls"
-
+# ROOT_URLCONF 是一个字符串，用于存放 Django 项目中的 URL 配置文件。
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -76,9 +83,11 @@ TEMPLATES = [
         },
     },
 ]
+# TEMPLATES 是一个列表，用于存放 Django 项目中的模板配置。
+# TEMPLATES 中的每个模板都必须是一个 Python 包，这个包中必须包含一个 template.py 文件，这个文件中必须包含一个 Template 类。
 
 WSGI_APPLICATION = "school_app.wsgi.application"
-
+# WSGI_APPLICATION 是一个字符串，用于存放 Django 项目中的 WSGI 配置文件。
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -89,6 +98,7 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
+# DATABASES 是一个字典，用于存放 Django 项目中的数据库配置。
 
 
 # Password validation
@@ -108,6 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+# AUTH_PASSWORD_VALIDATORS 是一个列表，用于存放 Django 项目中的密码验证器。
 
 
 # Internationalization
@@ -180,7 +191,8 @@ LOGGING = {
         },
     },
 }
-
+# LOGGING 存放 Django 项目中的日志配置。
+# 级别从低到高分别为 DEBUG、INFO、WARNING、ERROR、CRITICAL，级别越高，表示记录的信息越重要。
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Site Default values
