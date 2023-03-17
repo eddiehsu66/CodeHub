@@ -11,9 +11,14 @@
 
 {% block content %}
   <form method="POST">
+  <!--GET 方法将表单数据附加到 URL 的查询字符串中，适用于无需修改服务器数据的简单查询。
+POST 方法将表单数据作为请求正文提交给服务器，适用于需要修改服务器数据或提交大量数据的情况。
+-->
     {% csrf_token %}
+    <!--csrf_token来自于django的模板标签，用于防止跨站请求伪造-->
     {{ formset.management_form}}
-
+    <!--formset.management_form 还包括一个隐藏的 DELETE 字段，它的值为 True 表示删除当前表单，为 False 则表示保留当前表单。
+      这个隐藏的 DELETE 字段需要与表单中的 DELETE 字段联动使用，以便在提交表单时正确地处理表单的删除操作。-->
     <div class="mb-3">
       {% for form in formset %}
       <div class="form-group row">

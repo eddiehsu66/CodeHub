@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
+<!--用于加载widget_tweaks库-->
 
 
 {% block title %}
@@ -9,16 +10,17 @@ Academic Sessions
 
 {% block breadcrumb %}
   <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
+  <!--data_toggle 用于触发modal，data_target 用于指定modal的id-->
     <i class="fa fa-plus"></i>
     Add new session
   </a>
 {% endblock breadcrumb %}
+<!-- breadcrumb 用于显示导航栏，可以在base.html中定义，也可以在每个页面中定义 -->
   
 
 {% block content %}
   <div class="row">
     <div class="col-sm-12">
-
         <table class="table table-bordered">
           <tbody>
             {% for object in object_list %}

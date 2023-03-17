@@ -23,6 +23,7 @@ from .views import (
 )
 
 urlpatterns = [
+    # path("路径"，视图函数，name="别名")
     path("", IndexView.as_view(), name="home"),
     path("site-config", SiteConfigView.as_view(), name="configs"),
     path(

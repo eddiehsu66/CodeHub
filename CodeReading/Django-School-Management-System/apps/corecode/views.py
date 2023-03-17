@@ -6,7 +6,7 @@ from django.shortcuts import HttpResponseRedirect, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView, View
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-
+# 视图函数
 from .forms import (
     AcademicSessionForm,
     AcademicTermForm,
@@ -26,7 +26,7 @@ from .models import (
 
 class IndexView(LoginRequiredMixin, TemplateView):
     template_name = "index.html"
-
+# LoginRequiredMixin和TemplateView是Django的类视图，用于创建一个登录验证的模板视图。
 
 class SiteConfigView(LoginRequiredMixin, View):
     """Site Config View"""
@@ -36,14 +36,20 @@ class SiteConfigView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         formset = self.form_class(queryset=SiteConfig.objects.all())
+        # form_class()返回一个表单集合，queryset参数用于指定网络配置信息的查询集。
         context = {"formset": formset}
         return render(request, self.template_name, context)
+    # get()方法当出现GET请求时调用，用于返回一个响应。
+    # render()方法用于返回一个响应,(请求对象，模板路径，上下文对象（一个字典）)
 
     def post(self, request, *args, **kwargs):
         formset = self.form_class(request.POST)
+        # 根据POST请求中的数据创建一个表单集合。
         if formset.is_valid():
             formset.save()
+            # save()方法用于保存表单集合中的数据。
             messages.success(request, "Configurations successfully updated")
+            # messages.success()方法用于显示一个成功消息。
         context = {"formset": formset, "title": "Configuration"}
         return render(request, self.template_name, context)
 
@@ -53,6 +59,7 @@ class SessionListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
     template_name = "corecode/session_list.html"
 
     def get_context_data(self, **kwargs):
+        # **kwargs为了使方法能够处理任意数量的关键字参数。这意味着可以向该方法传递任意数量的关键字参数，并将其视为字典。
         context = super().get_context_data(**kwargs)
         context["form"] = AcademicSessionForm()
         return context
@@ -63,6 +70,7 @@ class SessionCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = AcademicSessionForm
     template_name = "corecode/mgt_form.html"
     success_url = reverse_lazy("sessions")
+    # reverse_lazy()方法用于返回一个URL，该URL将在视图函数被调用时解析。
     success_message = "New session successfully added"
 
     def get_context_data(self, **kwargs):
