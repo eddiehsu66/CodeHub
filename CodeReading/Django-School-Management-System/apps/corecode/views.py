@@ -91,12 +91,17 @@ class SessionUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         if obj.current == False:
             terms = (
                 AcademicSession.objects.filter(current=True)
+                #返回academicSession的实例，该实例的current属性为True。
                 .exclude(name=obj.name)
                 .exists()
+                # exists()方法用于判断查询集中是否有数据。
             )
             if not terms:
                 messages.warning(self.request, "You must set a session to current.")
                 return redirect("session-list")
+        # 会判断当前修改的模型实例是否为当前学期，
+        # 如果不是，则会查询是否有已经被设置为当前学期的模型实例，
+        # 如果没有，则会返回一个包含警告信息的响应。
         return super().form_valid(form)
 
 
